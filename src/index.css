@@ -8,35 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Deepankar's Portfolio Design System */
+    --background: 220 39% 11%;      /* Deep Navy #0F172A */
+    --foreground: 210 20% 98%;      /* White #F8FAFC */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 30% 18%;            /* Dark Slate #1E293B */
+    --card-foreground: 210 20% 98%; /* White #F8FAFC */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 30% 18%;         /* Dark Slate */
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 239 84% 67%;         /* Indigo #6366F1 */
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 30% 18%;       /* Dark Slate */
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 30% 18%;           /* Dark Slate */
+    --muted-foreground: 214 32% 79%; /* Gray #CBD5E1 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 187 95% 43%;          /* Teal #06B6D4 */
+    --accent-foreground: 210 20% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 30% 25%;          /* Slightly lighter than card */
+    --input: 220 30% 18%;           /* Dark Slate */
+    --ring: 239 84% 67%;            /* Indigo */
 
-    --radius: 0.5rem;
+    /* Portfolio-specific design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(220, 39%, 11%) 0%, hsl(220, 30%, 18%) 100%);
+    --accent-gradient: linear-gradient(135deg, hsl(239, 84%, 67%) 0%, hsl(187, 95%, 43%) 100%);
+    --glow-primary: 0 0 40px hsl(239 84% 67% / 0.3);
+    --glow-accent: 0 0 40px hsl(187 95% 43% / 0.3);
+    
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +108,78 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Portfolio Animations & Utilities */
+@layer utilities {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .accent-gradient {
+    background: var(--accent-gradient);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+  }
+  
+  .scale-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .scale-hover:hover {
+    transform: scale(1.05);
+  }
+  
+  .text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
   }
 }
