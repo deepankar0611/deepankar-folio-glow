@@ -59,11 +59,11 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4">
-              What Clients Say
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4 fade-in-down">
+              Clients on Bridge Code
             </h2>
-            <p className="font-inter text-lg text-muted-foreground">
-              Don't just take my word for it – here's what my clients have to say about working with me.
+            <p className="font-inter text-lg text-muted-foreground fade-in-up">
+              Reliable delivery, clean engineering, and crisp motion—words our clients use for us.
             </p>
           </div>
           

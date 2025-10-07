@@ -9,6 +9,8 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    budget: '',
     message: ''
   });
   const { toast } = useToast();
@@ -17,10 +19,10 @@ const Contact = () => {
     e.preventDefault();
     
     // Basic form validation
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast({
         title: "Please fill in all fields",
-        description: "All fields are required to send your message.",
+        description: "Name, email, phone, and message are required to send your message.",
         variant: "destructive"
       });
       return;
@@ -29,11 +31,11 @@ const Contact = () => {
     // Simulate form submission
     toast({
       title: "Message sent successfully! 🚀",
-      description: "Thank you for your message. I'll get back to you soon!",
+      description: "Thanks! You’ll receive a proposal within 24 hours.",
     });
 
     // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', budget: '', message: '' });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,7 +68,7 @@ const Contact = () => {
       icon: '📱',
       label: 'WhatsApp',
       value: '+91 98765 43210',
-      link: 'https://wa.me/919876543210'
+      link: 'https://wa.me/919876543210?text=Hi!%20I%20need%20a%20website%20or%20app%20for%20my%20business.'
     }
   ];
 
@@ -76,17 +78,17 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4">
-              Let's Work Together 🚀
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4 fade-in-down">
+              Start with Bridge Code 🚀
             </h2>
-            <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto">
-              Got a project idea or need a freelancer for your business? I'd love to collaborate and bring your vision to life.
+            <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto fade-in-up">
+              Tell us about your tool, website, or app. Get a plan and proposal within 24 hours.
             </p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="p-8 bg-background border-border">
+            <Card className="p-8 bg-background border-border shadow-soft hover-lift">
               <h3 className="font-montserrat font-bold text-xl text-foreground mb-6">
                 Send me a message
               </h3>
@@ -123,6 +125,37 @@ const Contact = () => {
                     required
                   />
                 </div>
+
+                <div>
+                  <label htmlFor="phone" className="block font-inter text-sm font-medium text-foreground mb-2">
+                    Phone/WhatsApp *
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 XXXXX XXXXX"
+                    className="w-full"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="budget" className="block font-inter text-sm font-medium text-foreground mb-2">
+                    Budget Range (optional)
+                  </label>
+                  <Input
+                    id="budget"
+                    name="budget"
+                    type="text"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    placeholder="e.g. ₹50k–₹2L"
+                    className="w-full"
+                  />
+                </div>
                 
                 <div>
                   <label htmlFor="message" className="block font-inter text-sm font-medium text-foreground mb-2">
@@ -144,7 +177,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full accent-gradient font-poppins font-medium py-6 text-lg"
                 >
-                  Send Message
+                  Get Proposal in 24 Hours
                 </Button>
               </form>
             </Card>
@@ -156,14 +189,14 @@ const Contact = () => {
                   Get in touch
                 </h3>
                 <p className="font-inter text-muted-foreground mb-8">
-                  Feel free to reach out through any of these channels. I typically respond within 24 hours.
+                  Reach out via email or WhatsApp. We typically respond within 1–6 hours (IST).
                 </p>
               </div>
               
               {/* Contact Cards */}
               <div className="space-y-4">
                 {contactInfo.map((contact, index) => (
-                  <Card key={index} className="p-4 bg-background/50 border-border hover:border-primary/50 transition-all duration-300 scale-hover">
+                  <Card key={index} className="p-4 bg-background/50 border-border hover-lift shadow-soft">
                     <a
                       href={contact.link}
                       target="_blank"
@@ -193,13 +226,13 @@ const Contact = () => {
                     Ready to start your project?
                   </h4>
                   <p className="font-inter text-sm text-muted-foreground mb-6">
-                    Let's schedule a free consultation to discuss your requirements and how I can help bring your ideas to life.
+                    Free 15‑min consultation. Hindi/English dono mein baat kar sakte hain.
                   </p>
                   <Button 
                     className="accent-gradient font-poppins font-medium px-6"
-                    onClick={() => window.open('https://wa.me/919876543210', '_blank')}
+                    onClick={() => window.open('https://wa.me/919876543210?text=Can%20we%20schedule%20a%2015-min%20consultation%3F', '_blank')}
                   >
-                    Schedule a Call
+                    Schedule on WhatsApp
                   </Button>
                 </div>
               </Card>

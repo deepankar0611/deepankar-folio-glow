@@ -3,28 +3,40 @@ import { Card } from '@/components/ui/card';
 const Services = () => {
   const services = [
     {
-      icon: '📱',
-      title: 'Mobile App Development',
-      description: 'Cross-platform apps with real-time features & modern UI/UX.',
-      features: ['Flutter Development', 'Firebase Integration', 'Real-time Features', 'Cross-platform']
+      icon: '🌐',
+      title: 'Business Websites & Landing Pages',
+      description: 'High‑conversion websites for SMEs, startups, and D2C brands. Blazing fast, secure, SEO‑ready.',
+      features: ['Next.js/React', 'Lead Forms & WhatsApp', 'Speed & SEO Core Web Vitals', 'Hosting & Analytics']
     },
     {
-      icon: '🌐',
-      title: 'Web Development',
-      description: 'Responsive, SEO-friendly websites for businesses.',
-      features: ['React/Next.js', 'Responsive Design', 'SEO Optimization', 'Modern UI/UX']
+      icon: '🛍️',
+      title: 'E‑commerce Stores (D2C)',
+      description: 'Full e‑commerce setup with payments, shipping, GST invoice, and COD. India‑ready.',
+      features: ['Razorpay/Stripe/UPI', 'Product CMS', 'Coupons & Referrals', 'Order & Inventory']
+    },
+    {
+      icon: '📱',
+      title: 'Android & iOS App Development',
+      description: 'Production‑grade apps using Flutter. Real‑time, secure, scalable backends.',
+      features: ['Flutter', 'Firebase/Supabase', 'Push Notifications', 'Play Store & App Store']
     },
     {
       icon: '🔍',
-      title: 'SEO Optimization',
-      description: 'Boost visibility with proven SEO strategies.',
-      features: ['Keyword Research', 'On-page SEO', 'Technical SEO', 'Analytics Setup']
+      title: 'SEO & Local Discovery',
+      description: 'Rank on Google. Local SEO for city/region targeting with review strategy.',
+      features: ['On‑page & Technical SEO', 'Local SEO (GMB)', 'Schema & Sitemaps', 'Analytics & Reporting']
+    },
+    {
+      icon: '⚙️',
+      title: 'Maintenance & AMC',
+      description: 'Monthly support plans for updates, monitoring, backups, and growth experiments.',
+      features: ['Uptime Monitoring', 'Security & Backups', 'Feature Iterations', 'Performance Tuning']
     },
     {
       icon: '🤖',
-      title: 'AI & Automation',
-      description: 'Chatbots, automation tools, and AI-powered solutions.',
-      features: ['Chatbot Development', 'Process Automation', 'AI Integration', 'Smart Solutions']
+      title: 'Automation & Chatbots',
+      description: 'WhatsApp chatbots, lead automation, internal tools to save hours every week.',
+      features: ['WhatsApp API', 'CRM Integrations', 'Workflow Automation', 'AI Assistants']
     }
   ];
 
@@ -34,11 +46,12 @@ const Services = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4">
-              My Services
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4 fade-in-down">
+              What We Build
             </h2>
-            <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive digital solutions to help your business grow and succeed in the modern world.
+            <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto fade-in-up">
+              Internal tools, marketing websites, e‑commerce, Android/iOS apps and automation.
+              Beautifully animated, performance‑first, and built to scale.
             </p>
           </div>
           
@@ -47,10 +60,10 @@ const Services = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 scale-hover group relative overflow-hidden"
+                className="p-8 bg-card border-border hover-lift shadow-soft group relative overflow-hidden"
               >
                 {/* Background gradient on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="relative z-10">
                   {/* Icon */}

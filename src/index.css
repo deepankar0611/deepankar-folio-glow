@@ -8,40 +8,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Deepankar's Portfolio Design System */
-    --background: 220 39% 11%;      /* Deep Navy #0F172A */
-    --foreground: 210 20% 98%;      /* White #F8FAFC */
+    /* Bridge Code – Light Theme */
+    --background: 0 0% 100%;        /* White */
+    --foreground: 222 47% 11%;      /* Slate-900 */
 
-    --card: 220 30% 18%;            /* Dark Slate #1E293B */
-    --card-foreground: 210 20% 98%; /* White #F8FAFC */
+    --card: 0 0% 100%;              /* White */
+    --card-foreground: 222 47% 11%;
 
-    --popover: 220 30% 18%;         /* Dark Slate */
-    --popover-foreground: 210 20% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 239 84% 67%;         /* Indigo #6366F1 */
-    --primary-foreground: 210 20% 98%;
+    --primary: 222 47% 11%;         /* Dark text for accents */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 30% 18%;       /* Dark Slate */
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 210 40% 96%;       /* Slate-100 */
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 30% 18%;           /* Dark Slate */
-    --muted-foreground: 214 32% 79%; /* Gray #CBD5E1 */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%; /* Slate-500 */
 
-    --accent: 187 95% 43%;          /* Teal #06B6D4 */
-    --accent-foreground: 210 20% 98%;
+    --accent: 210 40% 96%;          /* Use subtle accent blocks */
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 30% 25%;          /* Slightly lighter than card */
-    --input: 220 30% 18%;           /* Dark Slate */
-    --ring: 239 84% 67%;            /* Indigo */
+    --border: 214 32% 91%;          /* Slate-200 */
+    --input: 214 32% 91%;
+    --ring: 215 16% 47%;
 
-    /* Portfolio-specific design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(220, 39%, 11%) 0%, hsl(220, 30%, 18%) 100%);
-    --accent-gradient: linear-gradient(135deg, hsl(239, 84%, 67%) 0%, hsl(187, 95%, 43%) 100%);
-    --glow-primary: 0 0 40px hsl(239 84% 67% / 0.3);
-    --glow-accent: 0 0 40px hsl(187 95% 43% / 0.3);
+    /* Theming: switch to light gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 96%) 100%);
+    --accent-gradient: linear-gradient(135deg, hsl(222, 47%, 11%) 0%, hsl(215, 16%, 47%) 100%);
+    --glow-primary: 0 0 40px hsl(222 47% 11% / 0.12);
+    --glow-accent: 0 0 40px hsl(215 16% 47% / 0.12);
     
     --radius: 0.75rem;
 
@@ -151,6 +151,59 @@ All colors MUST be HSL.
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Soft elevation and hover lift */
+  .shadow-soft {
+    box-shadow: 0 6px 24px hsl(222 47% 11% / 0.08);
+  }
+  .hover-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px hsl(222 47% 11% / 0.12);
+  }
+
+  /* Button shine effect */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: -200% -50% auto auto;
+    width: 50%;
+    height: 300%;
+    transform: rotate(20deg);
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.35), transparent);
+    animation: shine 2.8s ease-in-out infinite;
+  }
+
+  /* Floating decorative elements */
+  .float-slow { animation: float 10s ease-in-out infinite; }
+  .float-medium { animation: float 6s ease-in-out infinite; }
+  .float-fast { animation: float 4s ease-in-out infinite; }
+
+  /* Marquee and float animations for interactive showcase */
+  .marquee {
+    display: flex;
+    gap: 2rem;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+  }
+
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .tilt-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tilt-card:hover {
+    transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateY(-4px);
+    box-shadow: 0 20px 60px hsl(239 84% 67% / 0.25);
+  }
 }
 
 @keyframes fadeInUp {
@@ -173,6 +226,22 @@ All colors MUST be HSL.
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-200%) rotate(20deg); }
+  100% { transform: translateX(200%) rotate(20deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-8px) translateX(4px); }
+  100% { transform: translateY(0) translateX(0); }
 }
 
 @keyframes pulse {

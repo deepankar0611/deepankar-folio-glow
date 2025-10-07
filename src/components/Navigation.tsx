@@ -24,14 +24,14 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-b border-border'
-          : 'bg-transparent'
+          ? 'bg-background/90 backdrop-blur-md border-b border-border'
+          : 'bg-background/80 backdrop-blur-sm border-b border-border'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="font-montserrat font-bold text-xl text-foreground">
-            Deepankar Singh
+            Bridge Code
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -47,12 +47,7 @@ const Navigation = () => {
             >
               Services
             </button>
-            <button
-              onClick={() => scrollToSection('portfolio')}
-              className="font-inter text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Portfolio
-            </button>
+            
             <button
               onClick={() => scrollToSection('testimonials')}
               className="font-inter text-muted-foreground hover:text-foreground transition-colors"
@@ -60,10 +55,18 @@ const Navigation = () => {
               Testimonials
             </button>
             <Button
+              onClick={() => window.open('https://wa.me/919876543210?text=Hi%20there!%20I%20want%20a%20website/app%20for%20my%20business.%20Can%20we%20talk%3F', '_blank')}
+              variant="outline"
+              className="font-poppins font-medium px-6 border-border text-foreground hover:bg-secondary btn-shine"
+              aria-label="Chat on WhatsApp"
+            >
+              WhatsApp
+            </Button>
+            <Button
               onClick={() => scrollToSection('contact')}
               className="accent-gradient font-poppins font-medium px-6"
             >
-              Hire Me
+              Get Free Quote
             </Button>
           </div>
         </div>

@@ -8,12 +8,12 @@ const Footer = () => {
           <div className="text-center">
             {/* Logo/Name */}
             <div className="font-montserrat font-bold text-2xl text-foreground mb-4">
-              Deepankar Singh
+              Bridge Code
             </div>
             
             {/* Tagline */}
             <p className="font-inter text-muted-foreground mb-8 max-w-md mx-auto">
-              Freelance App & Web Developer specializing in modern digital solutions.
+              We build tools, websites, and apps with beautiful motion and measurable impact.
             </p>
             
             {/* Social Links */}
@@ -46,7 +46,7 @@ const Footer = () => {
                 🐙
               </a>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/919876543210?text=Hi!%20I%20am%20interested%20in%20building%20a%20website%20or%20app."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors duration-300"
@@ -70,12 +70,7 @@ const Footer = () => {
               >
                 Services
               </a>
-              <a 
-                href="#portfolio" 
-                className="font-inter text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                Portfolio
-              </a>
+              
               <a 
                 href="#contact" 
                 className="font-inter text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -87,7 +82,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="pt-8 border-t border-border">
               <p className="font-inter text-sm text-muted-foreground">
-                © {currentYear} Deepankar Singh. All Rights Reserved. Made with ❤️ by Deepankar.
+                © {currentYear} Bridge Code. All Rights Reserved. Made in India 🇮🇳.
               </p>
             </div>
           </div>

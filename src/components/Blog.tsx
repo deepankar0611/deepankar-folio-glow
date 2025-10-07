@@ -35,11 +35,11 @@ const Blog = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4">
-              My Insights & Blogs
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4 fade-in-down">
+              Insights from Bridge Code
             </h2>
-            <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto">
-              Sharing knowledge about development, SEO, and digital solutions to help the community grow.
+            <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto fade-in-up">
+              Notes on product engineering, motion design, and shipping faster.
             </p>
           </div>
           
